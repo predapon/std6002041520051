@@ -9,7 +9,6 @@ class App extends React.Component {
         return(
             <View>
                 <Text>Predapon Aungnaparat</Text>
-                <Text>Predapon Aungnaparat</Text>
             </View>
         );
     }
