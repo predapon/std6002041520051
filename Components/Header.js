@@ -1,6 +1,5 @@
 //import lib
 import React, {Component} from 'react';
-// import React from 'react';
 import {View,Text} from 'react-native';
 
 //creat components
@@ -9,6 +8,8 @@ class Header extends Component{
         return(
         <View style={styles.header}>
             <Text style={styles.text} >{this.props.title}</Text>
+        
+          
         </View>
         );
     }
@@ -24,7 +25,7 @@ const styles = {
         fontSize:20,
         color:"#000000",
         textAlign:"center",
-        
+
 
     }
 }
