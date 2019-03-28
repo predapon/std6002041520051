@@ -18,8 +18,9 @@ class Header extends Component{
 const styles = {
     header: {
         padding: 15,
-        backgroundColor:"#910606"
-        
+        backgroundColor:"#910606",
+        paddingHorizontal : 50,
+        elevation:10
     },
     text:{
         fontSize:20,

@@ -8,7 +8,7 @@ class Card extends Component{
         <View>
             <CardSection>
                 <View>
-                    <View style={{margin:10,flexDirection: 'row'}}>
+                    <View style={{margin:5,marginTop:15,flexDirection: 'row'}}>
                             <View style={{ width: 100, height: 100 }}>
                                 <Image 
                                     source={{ uri: 'https://goo.gl/YPeqNN' }} 
