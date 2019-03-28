@@ -2,7 +2,7 @@
 import React from 'react';
 import { View,Text } from 'react-native';
 import Header from './Header';
-
+import Card from './Card';
 //Writer components
 class App extends React.Component {
     render(){
@@ -10,6 +10,7 @@ class App extends React.Component {
             <View>
                 <Header title="Albums" />
                 <Text>Predapon Aungnaparat........</Text>
+                <Card />
             </View>
         );
     }
