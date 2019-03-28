@@ -8,8 +8,8 @@ class App extends React.Component {
     render(){
         return(
             <View>
-                <Header title="Albums" />
-                <Text>Predapon Aungnaparat........</Text>
+                <Header title="ALBUMS" />
+                {/* <Text>.....................................</Text> */}
                 <Card />
             </View>
         );
