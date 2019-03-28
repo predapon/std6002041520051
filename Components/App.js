@@ -8,7 +8,7 @@ class App extends React.Component {
     render(){
         return(
             <View>
-                <Text>Predapon Aungnaparat</Text>
+                <Text>Predapon Aungnaparat........</Text>
             </View>
         );
     }
