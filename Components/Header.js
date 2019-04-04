@@ -20,7 +20,9 @@ const styles = {
         padding: 15,
         backgroundColor:"#910606",
         paddingHorizontal : 50,
-        elevation:10
+        elevation: 10,
+        marginBottom:15
+        
     },
     text:{
         fontSize:20,
