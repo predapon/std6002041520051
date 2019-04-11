@@ -7,9 +7,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "asyncstorage": "^1.5.0",
     "axios": "^0.18.0",
     "react": "16.8.3",
-    "react-native": "0.59.0"
+    "react-native": "0.59.0",
+    "react-navigation": "^3.7.1"
   },
   "devDependencies": {
     "@babel/core": "7.3.4",
