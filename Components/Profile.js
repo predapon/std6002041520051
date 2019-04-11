@@ -16,10 +16,14 @@ class Profile extends Component{
     static navigationOptions = {
         title: 'Profile',
       };
-    componentDidMount(){
+    async logout(){
+        await AsyncStorage.setItem('token','')
+        this.props.navigation.push('Login')
+    }
+    async componentDidMount(){
         const url = 'http://128.199.240.120:9999/api/auth/me'
-        // const token = ''
-        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1Y2E1YWZkMzE5OGUwMDA4NDcyZGRlMzkiLCJpYXQiOjE1NTQ5Njk2NTB9.mTNcBpzobWbMMnRbxrbbOpzu4M6OLrA7QbkPorTFy3M'
+        const token = await AsyncStorage.getItem('token');
+        // const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1Y2E1YWZkMzE5OGUwMDA4NDcyZGRlMzkiLCJpYXQiOjE1NTQ5Njk2NTB9.mTNcBpzobWbMMnRbxrbbOpzu4M6OLrA7QbkPorTFy3M'
         const config = { 
                             headers: { 
                                 accept: '*/*',
@@ -75,10 +79,17 @@ class Profile extends Component{
         }
         return(
             <View >
-                <Text style={styles.text}>Profile</Text>
-                <Text>Name : {this.state.name}</Text>
-                <Text>Email : {this.state.email}</Text>
-                
+                {/* <Text style={styles.text}>Profile</Text> */}
+                <Text style={styles.text} >Name : {this.state.name}</Text>
+                <Text style={styles.text} >Email : {this.state.email}</Text>
+                <View style={styles.button}>
+                    <View style={{width: 100 }}>
+                        <Button 
+                            onPress={this.logout.bind(this)}
+                            title="LOGOUT" 
+                            color= "#910606" />
+                    </View>                   
+                </View>
             </View>
         );
     }
@@ -95,7 +106,8 @@ const styles = {
 
     },
     text : {
-        fontSize:20,
+        fontSize:18,
+        margin : 10
     }
 }
 export default Profile;

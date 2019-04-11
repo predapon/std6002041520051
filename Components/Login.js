@@ -13,12 +13,18 @@ class Login extends Component{
         this.onChangePassword = this.onChangePassword.bind(this)
     }
     static navigationOptions = {
-        title: 'Login',
-      };
-    componentDidMount(){
-        const {navigate} = this.props.navigation;
-        return navigate('Profile')
-        // this.props.navigation.navigate('Profile')
+        title: 'Login'
+    }
+    async componentDidMount(){
+        const {navigate} = this.props.navigation;   
+        const token = await AsyncStorage.getItem('token');
+        console.log(token)
+        console.log("test")
+
+        // const token = await AsyncStorage.getItem('token')
+        if(token) {
+            return navigate('Profile')
+        }
     }
     onChangeEmail(e){
         console.log('onChangeEmail', e)
@@ -28,7 +34,7 @@ class Login extends Component{
         console.log('onChangePassword', e)
         this.setState({ password: e})
     }
-    onPress(){ 
+    async onPress(){ 
         console.log(this.state)
         const url = 'http://128.199.240.120:9999/api/auth/login'
         axios.post(url, this.state)
@@ -36,8 +42,8 @@ class Login extends Component{
                 console.log('login',res.data.data.token)
                 AsyncStorage.setItem('token',res.data.data.token)
                 console.log("set OK")
+                this.props.navigation.navigate('Profile')
             })
-            this.props.navigation.navigate('Profile')
     }
     render(){
         return(
