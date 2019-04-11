@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {View,Text,TextInput,Button,AsyncStorage} from 'react-native';
 import axios from 'axios';
 
-
 class Login extends Component{
     constructor(props){
         super(props)
@@ -13,7 +12,14 @@ class Login extends Component{
         this.onChangeEmail = this.onChangeEmail.bind(this)
         this.onChangePassword = this.onChangePassword.bind(this)
     }
-
+    static navigationOptions = {
+        title: 'Login',
+      };
+    componentDidMount(){
+        const {navigate} = this.props.navigation;
+        return navigate('Profile')
+        // this.props.navigation.navigate('Profile')
+    }
     onChangeEmail(e){
         console.log('onChangeEmail', e)
         this.setState({ email: e})
@@ -31,13 +37,14 @@ class Login extends Component{
                 AsyncStorage.setItem('token',res.data.data.token)
                 console.log("set OK")
             })
+            this.props.navigation.navigate('Profile')
     }
     render(){
         return(
             <View >
                 <TextInput 
                     style={styles.text}
-                    placeholder= "Email..."
+                    placeholder= "Email...."
                     // onChangeText={(email) => {
                     //                             this.setState({email});
                     //                             console.log(this.state.email);
@@ -70,7 +77,6 @@ const styles = {
         alignItems : 'center',
         justifyContent : 'center',
         margin : 10
-
     },
     text : {
         fontSize:20,

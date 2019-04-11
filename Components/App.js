@@ -4,11 +4,8 @@ import { View,Text } from 'react-native';
 import Header from './Header';
 import Login from './Login';
 import Profile from './Profile';
-// import { createStackNavigator, createAppContainer } from 'react-navigation';
-// import Profile from './Profile';
 
-
-//Writer components
+// Writer components
 class App extends React.Component {
     render(){
         return(
@@ -23,6 +20,9 @@ class App extends React.Component {
     }
 }
 
+
 // export
 export default App;
+
+
 
